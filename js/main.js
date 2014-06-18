@@ -1,71 +1,101 @@
-// Set the scene
+// If browser doesn't "do" requestanimationframe
+if ( !window.requestAnimationFrame ) {
+ 
+	window.requestAnimationFrame = ( function() {
+ 
+		return window.webkitRequestAnimationFrame ||
+		window.mozRequestAnimationFrame ||
+		window.oRequestAnimationFrame ||
+		window.msRequestAnimationFrame ||
+		function( /* function FrameRequestCallback */ callback, /* DOMElement Element */ element ) {
+ 
+			window.setTimeout( callback, 1000 / 60 );
+ 
+		};
+ 
+	} )();
+ 
+}
 
-var WIDTH = 400,
-    HEIGHT = 300;
+var scene, camera, renderer;
 
-// Camera attributes
-var VIEW_ANGLE = 45,
-    ASPECT = WIDTH / HEIGHT,
-    NEAR = 0.1,
-    FAR = 10000;
+init();
+animate();
 
-var $container = $('#container');
+function init() {
+    // Set the scene
 
-var renderer = new THREE.WebGLRenderer();
+    var WIDTH = 400,
+        HEIGHT = 300;
 
-var camera = 
-    new THREE.PerspectiveCamera(
-            VIEW_ANGLE,
-            ASPECT,
-            NEAR,
-            FAR);
+    // Camera attributes
+    var VIEW_ANGLE = 45,
+        ASPECT = WIDTH / HEIGHT,
+        NEAR = 0.1,
+        FAR = 10000;
 
-var scene = new THREE.Scene();
+    var $container = $('#container');
 
-// add the camera to the scene
-scene.add(camera);
+    renderer = new THREE.WebGLRenderer();
 
-// default camera position
-camera.position.z = 300;
+    camera = 
+        new THREE.PerspectiveCamera(
+                VIEW_ANGLE,
+                ASPECT,
+                NEAR,
+                FAR);
 
-renderer.setSize(WIDTH, HEIGHT);
+    scene = new THREE.Scene();
 
-$container.append(renderer.domElement);
+    // add the camera to the scene
+    scene.add(camera);
 
-// Make a Mesh
+    // default camera position
+    camera.position.z = 300;
 
-var radius = 50,
-    segments = 16,
-    rings = 16;
+    renderer.setSize(WIDTH, HEIGHT);
 
-// Create the sphere's material
-var sphereMaterial = 
-    new THREE.MeshLambertMaterial(
-        {
-            color: 'blue'
-        });
+    $container.append(renderer.domElement);
 
-// Sphere geometry
+    // Make a Mesh
 
-var sphere = new THREE.Mesh(
-    new THREE.SphereGeometry(
-        radius,
-        segments,
-        rings),
-    sphereMaterial);
+    var radius = 50,
+        segments = 16,
+        rings = 16;
 
+    // Create the sphere's material
+    var sphereMaterial = 
+        new THREE.MeshLambertMaterial(
+            {
+                color: 'blue'
+            });
 
-scene.add(sphere);
+    // Sphere geometry
 
-// Create a point light
-var pointLight = 
-    new THREE.PointLight(0xFFFFFF);
-
-pointLight.position.x = 10;
-pointLight.position.y = 50;
-pointLight.position.z = 130;
-
-scene.add(pointLight);
+    var sphere = new THREE.Mesh(
+        new THREE.SphereGeometry(
+            radius,
+            segments,
+            rings),
+        sphereMaterial);
 
 
-renderer.render(scene, camera);
+    scene.add(sphere);
+
+    // Create a point light
+    var pointLight = 
+        new THREE.PointLight(0xFFFFFF);
+
+    pointLight.position.x = 10;
+    pointLight.position.y = 50;
+    pointLight.position.z = 130;
+
+    scene.add(pointLight);
+}
+
+
+// Renders the scene and updates the render as needed.
+function animate() {
+  requestAnimationFrame(animate);
+  renderer.render(scene, camera);
+}
