@@ -12,4 +12,7 @@ Three.js
 [Download](http://threejs.org/)
 [Docs](http://threejs.org/docs/)
 
+Nature of Code
+[Book](http://natureofcode.com/book/)
+
 
