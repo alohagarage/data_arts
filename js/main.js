@@ -17,7 +17,13 @@ if ( !window.requestAnimationFrame ) {
  
 }
 
-var scene, camera, renderer;
+var scene, 
+    camera, 
+    renderer, 
+    sphere,
+    pointLight;
+
+var increment = 1;
 
 init();
 animate();
@@ -25,8 +31,8 @@ animate();
 function init() {
     // Set the scene
 
-    var WIDTH = 400,
-        HEIGHT = 300;
+    var WIDTH = 900,
+        HEIGHT = 600;
 
     // Camera attributes
     var VIEW_ANGLE = 45,
@@ -67,12 +73,13 @@ function init() {
     var sphereMaterial = 
         new THREE.MeshLambertMaterial(
             {
-                color: 'blue'
+                color: '#FF66FF'
+            
             });
 
     // Sphere geometry
 
-    var sphere = new THREE.Mesh(
+    sphere = new THREE.Mesh(
         new THREE.SphereGeometry(
             radius,
             segments,
@@ -83,12 +90,12 @@ function init() {
     scene.add(sphere);
 
     // Create a point light
-    var pointLight = 
+    pointLight = 
         new THREE.PointLight(0xFFFFFF);
 
     pointLight.position.x = 10;
     pointLight.position.y = 50;
-    pointLight.position.z = 130;
+    pointLight.position.z = 100;
 
     scene.add(pointLight);
 }
@@ -96,6 +103,27 @@ function init() {
 
 // Renders the scene and updates the render as needed.
 function animate() {
-  requestAnimationFrame(animate);
-  renderer.render(scene, camera);
+
+    // Update sphere position
+    /*
+    if (sphere.position.x == 50) {
+        increment = -1;
+    } else if (sphere.position.x == -50) {
+        increment = 1;
+    }
+
+    sphere.position.x += increment;
+
+    // Update light position
+    if (pointLight.position.z == 100) {
+        increment = -1;
+    } else if (pointLight.position.z == 0) {
+        increment = 1;
+    }
+
+    pointLight.position.z += increment;
+    */
+
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
 }
