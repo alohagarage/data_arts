@@ -1,18 +1,35 @@
 #Data Arts
 
+Learn how to make artwork out of basic data manipulation in this four-session Data Art class taught by Anthony Arroyo. You’ll learn basic Javascript and use WebGL, which will help you take your preferred data set and turn it into an intriguing and informative piece of procedural art that will work in any browser. You’ll also get an introduction into the world of data science and manipulation.
+
+##Agenda
+
+- Meeting 1: Javascript Intro/Three.js I
+
+    - Introductions: Who are you and what the hell do you want?
+    - Javascript in 60 Seconds slash 25 minutes
+    - Chrome Dev Tools
+    - Drawing Solids with WebGL/Three.js
+    - Animating with WebGL
+        - Solid position
+        - Light position
+
+- Meeting 2: Data Files/Three.js II
+
+- Meeting 3: Data Driven Animation
+
+- Meeting 4: Workshop
+
 ##Links
 
-Text Editor
-[atom.io](http://atom.io/)
+- Reference Book [Book](http://natureofcode.com/book/)
 
-Q&A
-[StackOverflow](http://stackoverflow.com/)
+- Text Editor [atom.io](http://atom.io/)
 
-Three.js
-[Download](http://threejs.org/)
-[Docs](http://threejs.org/docs/)
+- Q&A [StackOverflow](http://stackoverflow.com/)
 
-Nature of Code
-[Book](http://natureofcode.com/book/)
+- Three.js [Download](http://threejs.org/) [Docs](http://threejs.org/docs/)
+
+- Color Picker [Hex Colors](http://www.w3schools.com/tags/ref_colorpicker.asp)
 
 
