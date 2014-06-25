@@ -42,26 +42,27 @@ function init() {
 
     var $container = $('#container');
 
+    // Make a renderer
     renderer = new THREE.WebGLRenderer();
 
+    renderer.setSize(WIDTH, HEIGHT);
+
+    $container.append(renderer.domElement);
+
+    scene = new THREE.Scene();
+
+    // Set up the camera
     camera = 
         new THREE.PerspectiveCamera(
                 VIEW_ANGLE,
                 ASPECT,
                 NEAR,
                 FAR);
-
-    scene = new THREE.Scene();
-
-    // add the camera to the scene
-    scene.add(camera);
-
     // default camera position
     camera.position.z = 300;
 
-    renderer.setSize(WIDTH, HEIGHT);
-
-    $container.append(renderer.domElement);
+    // add the camera to the scene
+    scene.add(camera);
 
     // Make a Mesh
 
@@ -78,6 +79,9 @@ function init() {
             });
 
     // Sphere geometry
+    //
+    /* DO IT*/
+    /* Look at the Three.js and try to make this a pyramid instead of a sphere! */
 
     sphere = new THREE.Mesh(
         new THREE.SphereGeometry(
@@ -104,26 +108,18 @@ function init() {
 // Renders the scene and updates the render as needed.
 function animate() {
 
-    // Update sphere position
-    /*
-    if (sphere.position.x == 50) {
-        increment = -1;
-    } else if (sphere.position.x == -50) {
-        increment = 1;
-    }
+    /* DO IT*/
+    /* Put some logic in here to move the pyramid around the area */
 
-    sphere.position.x += increment;
+    /* DO IT*/
+    /* Put some logic in here to move the light source */
 
-    // Update light position
-    if (pointLight.position.z == 100) {
-        increment = -1;
-    } else if (pointLight.position.z == 0) {
-        increment = 1;
-    }
+    /* DO IT*/
+    /* Put some logic in here to move the light source */
 
-    pointLight.position.z += increment;
-    */
 
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
 }
+
+
