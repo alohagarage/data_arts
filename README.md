@@ -20,6 +20,14 @@ Learn how to make artwork out of basic data manipulation in this four-session Da
 
 - Meeting 4: Workshop
 
+##Setup
+
+Everything should run well in Google Chrome, but you still need to run everything on a local server. To do so, navigate to the `data_arts` directory on your computer and run the following command in the commandline.
+
+`python -m SimpleHTTPServer`
+
+Now, navigate to localhost:8000 in Chrome. You should be able to see a page that says "Welcome to Data Arts". 
+
 ##Links
 
 - Reference Book [Book](http://natureofcode.com/book/)
