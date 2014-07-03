@@ -65,11 +65,8 @@ function init() {
 
     // Make a Mesh
 
-    var radius = 50,
-        segments = 16,
-        rings = 16;
-
     // Create the sphere's material
+    // This variable should be an array if the shape has more than one face
     var sphereMaterial = 
         new THREE.MeshLambertMaterial(
             {
@@ -78,14 +75,18 @@ function init() {
             });
 
     // Sphere geometry
+    //
+    var radius = 50,
+        segments = 16,
+        rings = 16;
 
-    sphere = new THREE.Mesh(
-        new THREE.SphereGeometry(
-            radius,
-            segments,
-            rings),
-        sphereMaterial);
+    var sphereGeometry = new THREE.SphereGeometry(
+        radius,
+        segments,
+        rings
+    )
 
+    sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
 
     scene.add(sphere);
 
@@ -104,7 +105,6 @@ function init() {
 // Renders the scene and updates the render as needed.
 function animate() {
 
-    // Update sphere position
     /*
     if (sphere.position.x == 50) {
         increment = -1;
@@ -113,15 +113,6 @@ function animate() {
     }
 
     sphere.position.x += increment;
-
-    // Update light position
-    if (pointLight.position.z == 100) {
-        increment = -1;
-    } else if (pointLight.position.z == 0) {
-        increment = 1;
-    }
-
-    pointLight.position.z += increment;
     */
 
     requestAnimationFrame(animate);
