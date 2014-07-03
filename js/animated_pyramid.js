@@ -29,6 +29,13 @@ init();
 animate();
 
 function init() {
+    var sizes = [
+        5,
+        10,
+        12,
+        27
+    ];
+
     // Set the scene
 
     var WIDTH = 900,
@@ -78,11 +85,14 @@ function init() {
             
             });
 
-    // Sphere geometry
-    //
-    /* DO IT*/
+    /* 1) DO IT*/
     /* Look at the Three.js and try to make this a pyramid instead of a sphere! */
 
+    /* 4) DO IT*/
+    /* Add multiple pyramids whose heights are based on sizes array*/
+
+    // Sphere geometry
+    //
     sphere = new THREE.Mesh(
         new THREE.SphereGeometry(
             radius,
@@ -108,15 +118,11 @@ function init() {
 // Renders the scene and updates the render as needed.
 function animate() {
 
-    /* DO IT*/
+    /* 2) DO IT*/
     /* Put some logic in here to move the pyramid around the area */
 
-    /* DO IT*/
+    /* 3) DO IT*/
     /* Put some logic in here to move the light source */
-
-    /* DO IT*/
-    /* Put some logic in here to move the light source */
-
 
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
