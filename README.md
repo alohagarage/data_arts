@@ -9,12 +9,12 @@ Learn how to make artwork out of basic data manipulation in this four-session Da
     - Introductions: Who are you and what the hell do you want?
     - Javascript in 60 Seconds slash 25 minutes
     - Chrome Dev Tools
+
+- Meeting 2: Data Files/Three.js II
     - Drawing Solids with WebGL/Three.js
     - Animating with WebGL
         - Solid position
         - Light position
-
-- Meeting 2: Data Files/Three.js II
 
 - Meeting 3: Data Driven Animation
 
@@ -39,5 +39,9 @@ Now, navigate to localhost:8000 in Chrome. You should be able to see a page that
 - Three.js [Download](http://threejs.org/) [Docs](http://threejs.org/docs/)
 
 - Color Picker [Hex Colors](http://www.w3schools.com/tags/ref_colorpicker.asp)
+
+- Three.js overview [](http://12devsofxmas.co.uk/2012/01/webgl-and-three-js/)
+
+- Three.js solid overview [](http://www.johannes-raida.de/tutorials/three.js/tutorial05/tutorial05.htm)
 
 
