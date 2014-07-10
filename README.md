@@ -44,4 +44,9 @@ Now, navigate to localhost:8000 in Chrome. You should be able to see a page that
 
 - Three.js solid overview [](http://www.johannes-raida.de/tutorials/three.js/tutorial05/tutorial05.htm)
 
+- D3.js API Reference [](https://github.com/mbostock/d3/wiki/API-Reference)
+
+- D3.js Examples [](https://github.com/mbostock/d3/wiki/Gallery)
+
+
 

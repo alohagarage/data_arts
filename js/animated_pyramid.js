@@ -79,7 +79,7 @@ function init() {
 
     // Create the sphere's material
     var sphereMaterial = 
-        new THREE.MeshLambertMaterial(
+        new THREE.MeshPhongMaterial(
             {
                 color: '#FF66FF'
             
@@ -90,6 +90,9 @@ function init() {
 
     /* 4) DO IT*/
     /* Add multiple pyramids whose heights are based on sizes array*/
+
+    /* 5) DO IT*/
+    /* Function to randomly add different shapes to scene */
 
     // Sphere geometry
     //

@@ -68,11 +68,7 @@ function init() {
     // Create the sphere's material
     // This variable should be an array if the shape has more than one face
     var sphereMaterial = 
-        new THREE.MeshLambertMaterial(
-            {
-                color: '#FF66FF'
-            
-            });
+        new THREE.MeshLambertMaterial( { color: '#FF66FF' });
 
     // Sphere geometry
     //
@@ -105,14 +101,14 @@ function init() {
 // Renders the scene and updates the render as needed.
 function animate() {
 
-    /*
     if (sphere.position.x == 50) {
-        increment = -1;
+        increment = -4;
     } else if (sphere.position.x == -50) {
-        increment = 1;
+        increment = 4;
     }
 
     sphere.position.x += increment;
+    /*
     */
 
     requestAnimationFrame(animate);

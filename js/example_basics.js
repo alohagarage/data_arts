@@ -6,7 +6,6 @@ var stringCheeseExpletive = 'This is a string';
 
 console.log(stringCheeseExpletive);
 
-/*
 // numbers
 var numbaz = 1;
 
@@ -15,7 +14,7 @@ console.log(numbaz);
 // arrays
 var arraygun = ['this', 'that', 'other'];
 
-console.arraygun([2]);
+console.log(arraygun[2]);
 
 // objects
 var elTejon = {
@@ -27,8 +26,9 @@ var elTejon = {
 
 console.log(elTejon['firstName'])
 
+
 // conditionals
-if (1 < 0 ) {
+if (1 == 0 ) {
     // Do something
     console.log('action1');
 } else {
@@ -37,15 +37,21 @@ if (1 < 0 ) {
 };
 
 // iterate
-for (var i = 0; i < 10; i ++) {
-    console.log(i);
+for (var i = 0; i < arraygun.length; i ++) {
+    console.log(arraygun[i]);
 }
 
 // Make a function
+//var conjunctionJunction = function(x, y) {
 var conjunctionJunction = function(x, y) {
     var output = x + y;
     return output;
 };
+
+console.log(conjunctionJunction(6, 7));
+console.log(conjunctionJunction(6, 4));
+
+
 
 // Objects can be used to make "Classes", which can have functions
 function Person() {
@@ -80,14 +86,15 @@ peter.setLastName('Venkman');
 peter.birthdayParty();
 
 //Pizza party!
-//peter.birthdayParty();
+peter.birthdayParty();
 
 //Jump castle!
-//peter.birthdayParty();
+peter.birthdayParty();
+
+console.log(peter);
 
 
-console.log(peter.sayName());
-
+/*
 */
 
 
