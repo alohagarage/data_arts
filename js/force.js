@@ -1,11 +1,11 @@
 var WIDTH = 960,
     HEIGHT = 500;
 
-var color = 'steelblue';
+var color = d3.scale.category20();
 
 var force = d3.layout.force()
     .charge(-120)
-    .linkDistance(30)
+    .linkDistance(90)
     .size([WIDTH, HEIGHT]);
 
 var svg = d3.select("#container").append("svg")
@@ -14,6 +14,8 @@ var svg = d3.select("#container").append("svg")
 
 // Load external file from JSON
 d3.json("js/miserables.json", function(error, graph) {
+
+    console.debug(graph.nodes);
 
     force.nodes(graph.nodes)
         .links(graph.links)
@@ -35,7 +37,7 @@ d3.json("js/miserables.json", function(error, graph) {
         .attr("r", 5)
         // 4) DO IT Show node title when mouseover
         .on("mouseover", function() { console.debug('hover'); })
-        .style("fill", function(d) { return color; })
+        .style("fill", function(d) { return color(d.group);})
         .call(force.drag);
 
     node.append("title")

@@ -23,6 +23,11 @@ var randomArray = function(array) {
     return array;
 }
 
+var modifyArray = function(array) {
+
+    return array;
+}
+
 
 // Basic parameters
 var WIDTH = 500,
@@ -43,17 +48,23 @@ var update = function(ds) {
     var circles = svg.selectAll('.circle')
         .data(ds);
 
+    //UPDATE
+    circles.transition()
+        .attr('cx', function(d) { return d.x; })
+        .attr('cy', function(d) { return d.y; });
+
     // What happens when data is entered?
-    // 1) DO IT: Make new circles fly in from off-screen (left)
+    // ENTER
     circles.enter()
         .append('circle')
-        .attr('color', 'black')
+        .attr('color', 'red')
         .attr('class', 'circle')
-        .attr('r', function(d) { return d.r; });
+        .attr('r', function(d) { return d.r; })
         .attr('cx', function(d) { return d.x; })
-        .attr('cy', function(d) { return d.y; })
+        .attr('cy', function(d) { return d.y; });
 
     // What happpens when data is removed?
+    // EXIT
     circles.exit()
         .transition()
         .attr('r', 10)
@@ -66,7 +77,6 @@ update(dataArray);
 
 // function run when 1st button is clicked
 $('#button-1').on('click', function() {
-
     svg.selectAll('.circle')
         .remove()
 
@@ -74,15 +84,16 @@ $('#button-1').on('click', function() {
 
     update(dataArray);
 
-    // 2) DO IT Make a function that re-randomizes the x and the y
-
 });
 
 
 // function run when 1st button is clicked
 $('#button-2').on('click', function() {
 
-    dataArray = randomArray(dataArray);
+    for (var i = 0; i < dataArray.length; i ++) {
+        dataArray[i]['x'] = 0;
+    }
+
 
     update(dataArray);
 
@@ -96,3 +107,14 @@ $('#button-3').on('click', function() {
     update(dataArray);
 
 });
+
+//DO IT "Window" your random array, so that only 5 array items are shown at a time.
+// When you reach teh end of the array, loop back
+// Put function here that you'd like performed at intervals
+setInterval(function() {
+
+    var dataArray = randomArray();
+
+    update(dataArray);
+
+}, 1500);
